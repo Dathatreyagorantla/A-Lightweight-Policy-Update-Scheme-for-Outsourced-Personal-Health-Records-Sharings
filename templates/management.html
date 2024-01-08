@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+<div class="book_apointment_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="popup_box ">
+                    <div class="popup_inner">
+                        <h3>
+                            Lab Technician Login
+                        </h3>
+                        <form action="{{url_for('labtechnician')}}" method="post">
+                            <div class="row">
+                                <div class="col-xl-9">
+                                    <input type="email" placeholder="Your Email" name="useremail" required>
+                                </div>
+                                <div class="col-xl-9">
+                                    <input type="password" placeholder="Password" name="passcode" required>
+                                </div>
+                                <div class="col-xl-9">
+                                    <button type="submit" class="boxed-btn3">Login</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
