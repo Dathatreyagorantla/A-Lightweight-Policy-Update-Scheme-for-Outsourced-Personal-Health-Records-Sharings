@@ -1,0 +1,29 @@
+{% extends "patienthome.html" %}
+{% block content %}
+<center>
+    <div class="card mb-3" style="max-width: 540px;margin-top:10rem">
+        <div class="row g-0">
+            {% for i in data %}
+            <div class="col-md-4">
+                <img src="/static/profiles/{{i[3]}}" class="img-fluid rounded-start" alt="...">
+            </div>
+
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h3>Profile</h3>
+                    <h5 class="card-title">Name : {{i[1]}}</h5>
+                    <h5 class="card-title">Aadhar : {{i[5]}}</h5>
+                    <h5 class="card-title">Address : {{i[4]}}</h5>
+
+                    <h3>Medical Condition</h3>
+
+                    <h5 class="card-title">BP : {{i[6]}}</h5>
+                    <h5 class="card-title">SUGAR : {{i[7]}}</h5>
+                    <h5 class="card-title">HYPERTENTION : {{i[8]}}</h5>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</center>
+{% endblock %}

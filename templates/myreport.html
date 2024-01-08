@@ -1,0 +1,65 @@
+{% extends 'patienthome.html' %}
+{% block content %}
+<div class="book_apointment_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="popup_box">
+                    <div class="popup_inner">
+                        <center>{{ msg }}</center>
+                        <h4>
+                            <b>Make Appointment</b>
+                        </h4>
+
+                        <form action="{{url_for('myappointments')}}" method="post">
+                            <div class="row">
+
+
+
+                                <input type="text" value="PB0{{data[0][0]}}" name="billnumber" required hidden>
+
+                                <div class="col-xl-6">
+                                    <label>Serial Number</label>
+                                    <input type="text" value="PID0{{data[0][0]}}" name="serialnumber" required readonly>
+                                </div>
+                                <div class="col-xl-6">
+                                    <label>User Name</label>
+                                    <input type="text" value="{{data[0][1]}}" name="patientname" required readonly>
+                                </div>
+                                <div class="col-xl-6">
+                                    <label>Aadhar</label>
+                                    <input type="text" name="aadhar" value="{{data[0][5]}}" required readonly>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <label>Blood Pressure</label>
+                                    <input type="text" name="bp" value="{{data[0][6]}}" required readonly>
+                                </div>
+
+                                <div class="col-xl-6">
+                                    <label>Sugar</label>
+                                    <input type="text" name="sugar" value="{{data[0][7]}}" required readonly>
+                                </div>
+
+
+
+                                <div class="col-xl-6">
+                                    <label>Hypertention</label>
+                                    <input type="text" name="hypertention" value="{{data[0][8]}}" required readonly>
+                                </div>
+
+
+                                <div class="col-xl-3">
+                                    <button type="submit" class="boxed-btn3"
+                                        style="margin-left:25rem;border-radius:20px;">Make
+                                        appointment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
